@@ -20,7 +20,7 @@ public class DLinkedList<T> {
     }
 
     public Boolean isEmpty(){
-        if (head == null){
+        if (head.getNext() == null && tail.getPrevious() == null){
             return true;
         }else {
             return false;
@@ -53,7 +53,7 @@ public class DLinkedList<T> {
     public int size(){
         int count = 0;
         Node currentNode = head.getNext();
-        while( currentNode != null){
+        while( currentNode.getNext() != null){
             currentNode = currentNode.getNext();
             count++;
         }
@@ -136,7 +136,7 @@ public class DLinkedList<T> {
         Node currentNode = head.getNext();
         String a = currentNode + "";
         currentNode = currentNode.getNext();
-        while (currentNode != null) {
+        while (currentNode.getNext() != null) {
             a = a + " -> " + currentNode ;
             currentNode = currentNode.getNext();
         }
